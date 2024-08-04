@@ -10,8 +10,7 @@
 #define NAMELENGTH 10  
 
 class Chat { 
-public:
-
+public: 
     Chat();
     ~Chat();
     void reg(std::string us_login, std::string us_pas);
