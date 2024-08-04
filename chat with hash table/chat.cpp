@@ -9,14 +9,12 @@ Chat::~Chat() {
     delete[] array;
 }
 int Chat::hash_func(std::string us_login, int offset) {
-    // вычисляем индекс
     int sum = 0, i = 0;
     for (; i < us_login.length(); i++) {
         sum += us_login[i];
     }
     const double coefficient = 0.1;
     const int constant = 3;
-    // квадратичные пробы
     return (constant * (double(coefficient * sum) - int(coefficient * sum) + offset * offset));
 }
 void Chat::resize() {
@@ -39,14 +37,12 @@ void Chat::resize() {
 }
 void Chat::reg(std::string us_login, std::string us_pas) {
     int index = -1, i = 0;
-    // берем пробы по всем i от 0 до размера массива
     for (; i < mem_size; i++) {
         index = hash_func(us_login,i);
         if (index >= mem_size) {
             resize();
         }
         if (array[index].status == enPairStatus::free) {
-            // найдена пустая ячейка, занимаем ее
             break;
         }
     }

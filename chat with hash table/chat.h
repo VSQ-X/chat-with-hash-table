@@ -7,9 +7,9 @@
 
 #include <string.h>
 
-#define NAMELENGTH 10  // Зафикируем длину имени
+#define NAMELENGTH 10  
 
-class Chat { // хэш таблица
+class Chat { 
 public:
 
     Chat();
@@ -24,7 +24,7 @@ private:
         deleted
     };
 
-    struct Pair { // пара ключ-значение
+    struct Pair { 
 
         Pair() :
             login(""),
